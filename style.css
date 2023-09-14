@@ -2,6 +2,7 @@
 
 :root {
     --font-white: #fafaf9;
+    --yellow: #fbbf24;
 }
 
 * {
@@ -9,12 +10,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-}
-
-.icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
 }
 
 .container {
@@ -31,7 +26,78 @@
     grid-row: 1 / 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    font-weight: bolder;
+    gap: 10px;
+    padding: 15px 20px;
 }
+
+
+.header .icon {
+    width: 25px;
+    height: 25px;
+}
+
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.searchbar > input {
+    width: 100%;
+    height: 60%;
+    border: none;
+    border-radius: 50px;
+}
+
+.profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.username > .profile-icon {
+    width: 75px;
+    height: 75px;
+}
+
+.name div {
+    font-size: 1.2rem;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+}
+
+.button {
+    text-align: center;
+    background-color: var(--yellow);
+    border-radius: 50px;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.account, .button-container {
+    justify-content: flex-end;
+}
+
 
 /* left-sidebar */
 
