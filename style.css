@@ -1,42 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap');
 
 :root {
-    --font-white: #fafaf9;
-    --yellow: #fbbf24;
+    --white: #fafaf9;
+    --yellow: #FFBF00;
+    --blue: #4682B4;
+    --gray: #E4EBF4;
+    --platinum: #E5E4E2;
+    --black: #36454F;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inclusive Sans', sans-serif;
+}
+
+html, body {
+    height: 100vh;
 }
 
 .container {
     background-color: gray;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
+    height: 100%;
 }
 
 /* header */
 
 .header {
-    background-color: blue;
+    background-color: white;
     grid-column: 2 / 4;
     grid-row: 1 / 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-weight: bolder;
     gap: 10px;
-    padding: 15px 20px;
+    padding: 10px 15px;
 }
 
+.header > div {
+    padding: 10px;
+}
 
 .header .icon {
     width: 25px;
     height: 25px;
 }
-
 
 .searchbar {
     display: flex;
@@ -52,9 +63,10 @@
 
 .searchbar > input {
     width: 100%;
-    height: 60%;
+    height: 30px;
     border: none;
     border-radius: 50px;
+    background-color: var(--platinum);
 }
 
 .profile-icon {
@@ -66,7 +78,7 @@
 .username {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .username > .profile-icon {
@@ -81,17 +93,18 @@
 .button-container {
     display: flex;
     align-items: center;
-    gap: 10%;
+    gap: 5%;
 }
 
 .button {
     text-align: center;
-    background-color: var(--yellow);
+    background-color: var(--blue);
     border-radius: 50px;
-    width: 100%;
+    width: 70%;
     padding: 10px;
     cursor: pointer;
     font-size: 1rem;
+    color: var(--white);
 }
 
 .account, .button-container {
@@ -102,15 +115,15 @@
 /* left-sidebar */
 
 .left-sidebar {
-    background-color: red;
+    background-color: var(--blue);
     grid-row: 1 / 3;
     grid-column: 1 / 2;
     display: flex;
     flex-direction: column;
     gap: 30px;
     padding: 16px;
-    font-weight: bold;
     font-size: 1rem;
+    font-weight: bold;
 }
 
 .dashboard {
@@ -119,7 +132,7 @@
     font-size: 1.2rem;
     font-weight: bolder;
     gap: 6px;
-    color: var(--font-white);
+    color: var(--white);
 }
 
 .dashboard .icon {
@@ -148,7 +161,7 @@
 
 .left-sidebar a {
     text-decoration: none;
-    color: var(--font-white);
+    color: var(--white);
 }
 
 
@@ -158,7 +171,13 @@
     padding: 15px;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    background-color: orange;
+    background-color: var(--gray);
+}
+
+.main > div:first-child {
+    padding: 0 10px 10px 10px;
+    font-weight: bolder;
+    font-size: 1.2rem;
 }
 
 .projects {
@@ -168,8 +187,37 @@
 }
 
 .card {
-    background-color: pink;
+    background-color: white;
     height: 200px;
+    padding: 15px 15px 15px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    align-items: center;
+    border-radius: 10px;
+    border-left: 0.6rem solid var(--yellow);
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 1rem;
+
+}
+
+.description {
+    font-size: 0.8rem;
+}
+.card .icon {
+    width: 25px;
+    height: 25px;
+}
+
+.icons {
+    justify-self: end;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
 }
 
 /* right-sidebar */
@@ -178,12 +226,78 @@
     padding: 15px;
     grid-column: 3 / 4;
     grid-row: 2 / 3;
-    background-color: lightblue;
+    background-color: var(--gray);
     min-width: 250px;
 }
 
 .announcement, .trending {
-    background-color: aqua;
+    background-color: #ffffff;
     height: 250px;
     width: 100%;
+    border-radius: 10px;
+}
+
+.right-sidebar > div:nth-child(odd) {
+    padding: 0 10px 10px 10px;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+.right-sidebar > div:nth-child(3) {
+    padding-top: 10px;
+}
+
+.announcement {
+    padding: 15px;
+    display: grid;
+    align-items: center;
+    gap: 2px;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.announcement-item {
+    display: grid;
+    gap: 2px;
+}
+
+.line {
+    border: 1px solid lightgray;
+}
+
+.announcement-title {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.announcement-description {
+    font-size: 0.6rem;
+}
+
+
+.trending-item > .profile-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.trending {
+    padding: 15px;
+    display: grid;
+    align-items: center;
+    gap: 2px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.trending-item {
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 5px;
+    align-items: center;
+}
+
+.name-username {
+    font-size: 0.8rem;
+}
+
+.name-username > div:first-child {
+    font-weight: bolder;
 }
