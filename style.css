@@ -30,6 +30,7 @@ html, body {
 
 img {
     cursor: pointer;
+    /* border-radius: 50%; */
 }
 
 /* header */
@@ -67,6 +68,7 @@ img {
     display: flex;
     align-items: center;
     gap: 15px;
+    justify-content: flex-end;
 }
 
 .searchbar > input {
@@ -102,9 +104,12 @@ img {
 }
 
 .button-container {
+    width: 60%;
+    justify-self: flex-end;
     display: flex;
     align-items: center;
     gap: 5%;
+    justify-content: flex-end;
 }
 
 .button {
@@ -122,10 +127,6 @@ img {
 
 .button:hover {
     background-color: #6495ED;
-}
-
-.account, .button-container {
-    justify-content: flex-end;
 }
 
 
